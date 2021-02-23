@@ -1,6 +1,6 @@
-defmodule CursoYoutube do
+defmodule CursoElixir do
   @moduledoc """
-  Documentation for `CursoYoutube`.
+  Documentation for `CursoElixir`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule CursoYoutube do
 
   ## Examples
 
-      iex> CursoYoutube.hello()
+      iex> CursoElixir.hello()
       :world
 
   """

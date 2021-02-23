@@ -1,9 +1,9 @@
-defmodule CursoYoutube.MixProject do
+defmodule CursoElixir.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :curso_youtube,
+      app: :curso_elixir,
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
