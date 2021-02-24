@@ -1,0 +1,6 @@
+[
+  { "nombre": "JC", "posicion": "DevMamager", "sueldo": 30000 },
+  { "nombre": "Rod", "posicion": "Frontedn", "sueldo": 40000 },
+  { "nombre": "Nico", "posicion": "Backedn", "sueldo": 80000 },
+  { "nombre": "Ado", "posicion": "DevOps", "sueldo": 50000 }
+]
