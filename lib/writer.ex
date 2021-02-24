@@ -1,6 +1,9 @@
 defmodule Empresa.Writer do
+  alias Empresa.Empleado, as: Empleado
+  import Jason, only: [encode: 1]
+
   # podriamos usar una guarda para validar que el sueldo sea numerico
-  defp to_map(%Empresa.Empleado{nombre: n, posicion: p, sueldo: s}) do
+  defp to_map(%Empleado{nombre: n, posicion: p, sueldo: s}) do
     %{"nombre" => n, "posicion" => p, "sueldo" => s}
   end
 
@@ -9,7 +12,7 @@ defmodule Empresa.Writer do
   end
 
   defp to_json(m) do
-    {:ok, json_version} = Jason.encode(m)
+    {:ok, json_version} = encode(m)
     json_version
   end
 
