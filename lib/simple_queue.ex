@@ -10,6 +10,13 @@ defmodule SimpleQueue do
   def handle_call(:dequeue, _from, []), do: {:reply, nil, []}
   def handle_call(:queue, _from, state), do: {:reply, state, state}
 
+  @doc """
+  GenServer.handle_cast/2 callback
+  """
+  def handle_cast({:enqueue, value}, state) do
+    {:noreply, state ++ [value]}
+  end
+
   def start_link(state \\ []) do
     # you may want to register your server with `name: __MODULE__`
     # as a third argument to `start_link`
@@ -17,5 +24,6 @@ defmodule SimpleQueue do
   end
 
   def queue, do: GenServer.call(__MODULE__, :queue)
+  def enqueue(value), do: GenServer.cast(__MODULE__, {:enqueue, value})
   def dequeue, do: GenServer.call(__MODULE__, :dequeue)
 end
