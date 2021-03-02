@@ -3,6 +3,16 @@ defmodule SimpleQueue do
 
   def init(state), do: {:ok, state}
 
+  def child_spec(opts) do
+    %{
+      id: SimpleQueue,
+      start: {__MODULE__, :start_link, [opts]},
+      shutdown: 5_000,
+      restart: :permanent,
+      type: :worker
+    }
+  end
+
   def handle_call(:dequeue, _from, [value | state]) do
     {:reply, value, state}
   end
